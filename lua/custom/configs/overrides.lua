@@ -12,6 +12,7 @@ M.treesitter = {
     "c",
     "markdown",
     "markdown_inline",
+    "python",
   },
   indent = {
     enable = true,
@@ -34,6 +35,11 @@ M.mason = {
     "deno",
     "prettier",
 
+    -- python
+    "pyright",
+    "balck",
+    "isort",
+
     -- c/cpp stuff
     "clangd",
     "clang-format",
@@ -42,6 +48,12 @@ M.mason = {
 
 -- git support in nvimtree
 M.nvimtree = {
+  filters = {
+    dotfiles = false,
+    git_ignored = false,
+    exclude = { vim.fn.stdpath "config" .. "/lua/custom" },
+  },
+
   git = {
     enable = true,
   },

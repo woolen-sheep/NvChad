@@ -5,6 +5,12 @@ local plugins = {
 
   -- Override plugin definition options
 
+  -- {
+  --   "williamboman/mason-lspconfig.nvim",
+  --   config = function()
+  --   end
+  -- },
+
   {
     "neovim/nvim-lspconfig",
     dependencies = {
@@ -17,6 +23,7 @@ local plugins = {
       },
     },
     config = function()
+      -- require("mason-lspconfig").setup()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
     end, -- Override to setup mason-lspconfig
@@ -82,7 +89,6 @@ local plugins = {
       {"nvim-treesitter/nvim-treesitter"}
     }
   },
-
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
